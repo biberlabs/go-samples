@@ -20,8 +20,16 @@ const (
 )
 
 func main() {
-    b := 1024;
-    fmt.Println( ByteSize(b) );
+    aa := 1024 // Auto-disover the aa's type (shorthand)
+    var bb ByteSize = 54687 // Explicitly set the bb's type
+
+    // Use as function
+    fmt.Println("aa is : ", ByteSize(aa));
+
+    // Use directly
+    // String() implementation of ByteSize type called automatically
+    // by fmt's Print.. method
+    fmt.Println("bb is : ", bb);
 }
 
 func (b ByteSize) String() string {
